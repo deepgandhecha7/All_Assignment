@@ -5,3 +5,66 @@
 width: 100%;
 height: 100%;
 }
+.flex{
+    display: flex;
+    flex-direction: column;
+}
+.cont
+{
+    display: flex;
+    background-color: #f2f2f2;
+    flex-direction: row;
+    justify-content: space-evenly;
+    
+
+}
+.cont2{
+    display: flex;
+    background-color: #f2f2f2;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin-top: 50px;
+    
+
+}
+.btn{
+    background-color: black;
+    border: 2px solid black;
+    width: 90px;
+    color: white
+
+}
+
+.One{
+    margin-top: 100px;
+    width: 50%;
+    height:400px;
+}
+.Two{
+    height: 400px;
+    width: 50%;
+    margin-left: 100px;
+}
+.Two iframe{
+    height: 496px;
+    width: 50%;
+}
+.anoth{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.cont2{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.Three{
+    margin-top: 50px;
+    height: 400px;
+}
+.Three iframe{
+    height: 400px;
+}
