@@ -14,6 +14,55 @@
 	var quixote = require("../../vendor/quixote.js");
   
 	// Define a test suite using Mocha's standard `define` function.
+
+	describe.only("Assignment-5", function() {
+
+		// Variables used by our tests. They're populated in the `before()` and `beforeEach()` functions.
+		var frame;      // The Quixote test frame.
+		var media;      // The media object element.
+		var figure;     // The figure element inside the media object. (The icon.)
+		var content;    // The content element inside the media object. (The paragraph.)
+
+		// Use Mocha's standard `before` function to set up our Quixote test frame before the tests run.
+		before(function(done) {
+			// Create the frame and load our stylesheet.
+			frame = quixote.createFrame(  
+				{
+				src: "/base/src/Assignment-5/assignment5.html", // the server under test must be proxied to localhost
+				// The URL of our stylesheet. It's served by Karma and configured in `build/config/karma.conf.js`.
+				stylesheet: "/base/src/Assignment-5/assignment5.css",
+			  }, done);   // This is an asynchronous operation, so we pass in Mocha's `done` callback.
+		});
+
+		// Use Mocha's standard `after` function to clean up our Quixote test frame after all the tests are done.
+		// We create and remove the test frame only once for the entire suite because it's a relatively expensive
+		// operation.
+		after(function() {
+			frame.remove();
+		});
+
+		// Use Mocha's standard `beforeEach()` function to set up the HTML elements we'll use to test our
+		// media object CSS.
+		beforeEach(function() {
+			// Reset Quixote's test frame to a pristine state. This ensures that any DOM changes we made in our
+			// tests don't affect other tests. We do it in the `beforeEach()` function rather than `afterEach()`
+			// to make debugging easier.
+			frame.reset();
+
+			// Create the HTML needed for our media object. This also acts as documentation for how the media
+			// object CSS is supposed to be used. Quixote will return an object we can use to make assertions about
+			// how the media element is styled.
+			media = frame.add(
+				// There's a containing <div>...
+				"<div class='media'>" +
+				// ...a figure...
+				"  <div id='figure' class='media__figure' style='width:100px; height:100px'>figure</div>" +
+				// ...and content.
+				"  <div id='content' class='media__content'>content</div>" +
+				"</div>",
+				// Give the HTML a name so Quixote's error messages are more readable. If we don't provide a name,
+				// Quixote will use the HTML by default. That would be pretty ugly.
+				"media object"
 	describe("Assignment-5", function () {
 	  // Variables used by our tests. They're populated in the `before()` and `beforeEach()` functions.
 	  var frame; // The Quixote test frame.

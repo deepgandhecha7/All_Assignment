@@ -1,7 +1,78 @@
 /* Our CSS file. */
 
 
-.container, .content {
-width: 100%;
-height: 100%;
-}
+#container{
+    width: 100%;
+    height: 100%;
+    
+    }
+    
+    .card{
+        display: flex;
+        align-items: center;
+        padding: 50px;
+        
+    }
+    .flexcont{
+        display:flex;
+        background-color:gainsboro;
+        border:2px solid gray;
+        flex-direction: column;
+        align-items: center;
+        
+    }
+    
+    .Card1{
+        background-color:#91C673;
+        margin-left:50px;
+        height:280px;
+        width:200px;
+        border-radius:10px 0px 0px 10px;
+    
+    }
+    .img1{
+        position: relative;
+        height: 300px;
+        bottom:50px;
+        right:45px;
+        
+        
+    }
+    h1{
+        padding-left:50px;
+        padding-top: 20px;
+    }
+    .Card2{
+        background-color:white;
+        height: 280px;
+        width: 400px;
+        border-radius: 0px 10px 10px 0px ;
+    }
+    .para{
+        width: 320px;
+        padding-left: 50px;
+        
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+    
+    .btn{
+        border: 2px solid #91C673;
+        height: auto;
+        width: 100px;
+        margin-left: 130px;
+        border-radius: 30%/50%;
+    }
+    .btn p{
+        padding-left: 20px;
+    
+    }
+    .btn:hover{
+        background-color: #91C673;
+    }
+    
+    .img2{
+        position: relative;
+        height: 200px;
+        right: 20px;
+        top:20px;
+    }
